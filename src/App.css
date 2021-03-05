@@ -1,6 +1,11 @@
 #root {
   height: 100%;
 }
+.mainContent{
+  margin: 5% 1% 4% 1%;
+  height:auto;
+  width:100% ;
+}
 .logo_div {
   height: 32px;
   margin: 16px;
@@ -244,8 +249,7 @@ input.ant-input.UserProfileTagSectionSmall {
 .right {
   text-align: right;
 }
-.login-form-password {
-}
+
 .login-card-form-forget {
   width: max-content;
   text-align: center;
@@ -386,14 +390,12 @@ input.ant-input.UserProfileTagSectionSmall {
 .right {
   text-align: right;
 }
-.login-form-password {
-}
+
 .login-card-form-login {
   width: 300px;
   text-align: center;
 }
-.icon-main-login {
-}
+
 .login-form {
   text-align: center;
 }
@@ -530,8 +532,7 @@ input.ant-input.UserProfileTagSectionSmall {
 .right {
   text-align: right;
 }
-.login-form-password {
-}
+
 .login-card-form-register {
   width: 25vw;
   text-align: center;
