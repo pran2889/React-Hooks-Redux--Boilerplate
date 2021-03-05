@@ -1,11 +1,11 @@
 import { Route, Redirect } from "react-router-dom";
 import auth from "../Components/Authentication/auth";
-const ProtectedRoute = ({ component: Component, ...rest }) => {
+const ProtectedRoute = ({ children, ...rest }) => {
     return (
         <Route {...rest} render={
             (props) => {
                 if (auth.isAuthenticated()) {
-                    return <Component {...rest} />
+                    return children
                 } else {
                     return <Redirect to={
                         {
