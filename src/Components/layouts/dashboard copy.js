@@ -18,7 +18,6 @@ const Dashboard1 = (props) => {
         }
     }, [getData])
     useEffect(() => {
-        debugger
         if (response) {
             actions.generalActions.getInfo(response.data);
         }

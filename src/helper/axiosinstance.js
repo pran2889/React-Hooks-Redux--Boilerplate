@@ -9,7 +9,7 @@ const axiosInstance = (history = null) => {
         headers.Authorization = `bearer ${localStorage.token}`;
     }
     const axiosInstance = axios.create({
-        baseURL: process.env.API_URL || ``,
+        baseURL: process.env.API_URL || `https://jsonplaceholder.typicode.com`,
         headers
     });
     axiosInstance.interceptors.request.use((response) =>

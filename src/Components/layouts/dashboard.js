@@ -6,7 +6,7 @@ import useGetData from "../../hooks/getHook";
 import MUIDataTable from "mui-datatables";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import SharedTest from '../shared/sharedTest';
-import { API_URL, GET_DATA_TODO } from '../../Constants/apis';
+import { GET_DATA_TODO } from '../../Constants/apis';
 
 const getMuiTheme = () => createMuiTheme({
     overrides: {
@@ -52,7 +52,7 @@ export const Dashboard = (props) => {
         response: [],
         error: "",
         isLoading: true,
-        URL: API_URL + GET_DATA_TODO
+        URL: GET_DATA_TODO
     });
     const [data, setData] = useState([]);
     const columnsData = [

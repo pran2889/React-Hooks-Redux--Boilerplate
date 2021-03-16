@@ -17,14 +17,14 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
-  },  
+  },
   toolbarIcon: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px',
     ...theme.mixins.toolbar,
-    background:'#3f51b5',
+    background: '#3f51b5',
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -52,16 +52,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = (props) => { 
+const Navbar = (props) => {
   const classes = useStyles(0);
 
   const handleLogout = e => {
     e.preventDefault();
-    auth.logout(() => { 
-    props.history.push("/login");
+    auth.logout(() => {
+      props.history.push("/login");
     });
-};
- 
+  };
+
   return (
     <div className={classes.root}>
       <AppBar
@@ -88,16 +88,16 @@ const Navbar = (props) => {
             noWrap
             className={classes.title}
           >
-            Reusable Component
+            React-Hooks-Redux-Boilerplate
           </Typography>
           <Tooltip title="Logout">
             <IconButton onClick={handleLogout} >
-              <PowerSettingsNewOutlinedIcon variant="contained"/>
+              <PowerSettingsNewOutlinedIcon variant="contained" />
             </IconButton>
           </Tooltip>
         </Toolbar>
       </AppBar>
-      
+
     </div>
   );
 };

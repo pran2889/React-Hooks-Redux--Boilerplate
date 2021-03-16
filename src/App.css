@@ -1,15 +1,26 @@
 #root {
   height: 100%;
 }
-.mainContent{
+.mainContent {
   margin: 5% 1% 4% 1%;
-  height:auto;
-  width:100% ;
+  height: auto;
+  width: 100%;
 }
-.mainErrorContent{
+.mainErrorContent {
   margin: 6% 1% 4% 1%;
-  height:auto;
-  width:100% ;
+  height: auto;
+  width: 100%;
+}
+.loadercenter {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  align-items: center;
 }
 .logo_div {
   height: 32px;
