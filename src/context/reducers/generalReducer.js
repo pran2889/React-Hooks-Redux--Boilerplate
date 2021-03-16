@@ -1,6 +1,7 @@
 import * as Actions from "../constants";
 export const generalStates = {
-    data: []
+    data: [],
+    birthdays: null
 }
 
 export const generalReducer = (state, action) => {
@@ -9,6 +10,11 @@ export const generalReducer = (state, action) => {
             return {
                 ...state,
                 data: action.data
+            };
+        case Actions.GET_BIRTHDAYS:
+            return {
+                ...state,
+                data: action.birthdays
             };
         default:
             throw new Error("Unexpected action");

@@ -3,8 +3,10 @@ import { StoreContext } from "../../context/store/storeContext";
 
 const SharedTest = () => {
     const { state } = useContext(StoreContext);
-    return (
-        <h1>{JSON.stringify(state.generalStates.data)}</h1>
+
+    return (<>
+        <h1>{state.generalStates.data.title}</h1>
+    </>
     );
 };
 

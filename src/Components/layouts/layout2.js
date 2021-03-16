@@ -3,7 +3,7 @@ import { StoreContext } from "../../context/store/storeContext";
 import useGetData from "../../hooks/getHook";
 import usePostData from "../../hooks/postHook";
 
-const Layout1 = (props) => {
+const Layout2 = (props) => {
     const { state } = useContext(StoreContext);
     const [body, setBody] = useState([]);
     const { postData, refreshPostData } = usePostData({
@@ -30,15 +30,15 @@ const Layout1 = (props) => {
     }, [refreshGetData]);
 
     return (
-        <>
-            <h1>Layout</h1>
+        <div className="mainContent">
+            <h1>Layout2</h1>
             <button onClick={InvokeAPI}>Invoke API</button>
             <h1> {JSON.stringify(state.generalStates.data)}</h1>
 
             <button onClick={InvokeGetAPI}>Invoke API</button>
             <h1> {JSON.stringify(getData.response)}</h1>
-        </>
+        </div>
     );
 };
 
-export default Layout1;
+export default Layout2;

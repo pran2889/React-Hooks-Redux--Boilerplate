@@ -45,7 +45,7 @@ const ForgotPassword = (props) => {
         e.preventDefault();
         swal({
             title: "Success",
-            text: "Password Reset Link Send Successfully",
+            text: "Password reset link send successfully",
             icon: "success",
           })
           .then(() =>{
@@ -60,8 +60,8 @@ const ForgotPassword = (props) => {
                  Forgot Password
         </Typography>
             <div className={classes.paper}>
-            <Paper elevation="0" >
-                <form className={classes.form} onSubmit={handleSubmit} validate>   
+            <Paper elevation={0}>
+                <form className={classes.form} onSubmit={handleSubmit} validate="true">   
                     <Typography component="h1" variant="h6">Lost your password? 
                         Please enter your registered email address. 
                         You will receive a link to create a new password via email.
@@ -78,7 +78,7 @@ const ForgotPassword = (props) => {
                                 <InputAdornment  position="start">
                                     <MailTwoToneIcon 
                                 // style={{ color: "lawngreen" }} 
-                                    fontSize="medium"/>
+                                    fontSize="default"/>
                                 </InputAdornment>
                                 ),
                             }}                            

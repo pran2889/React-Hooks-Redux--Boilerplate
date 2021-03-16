@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Container, CssBaseline, makeStyles } from '@material-ui/core'
+import ErrorBoundary from '../Error/errorBoundary';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,13 +29,16 @@ const useStyles = makeStyles((theme) => ({
 
 export const Layout = (props) => {
     const classes = useStyles();
+    // useEffect(() => {
+    //     throw new Error("Layout was not accessible")
+    // }, [])
     return(
         <div className="mainContent">
         <CssBaseline/>
           <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    Here goes the layout content 
+                   
                 </Container>
             </main>
         </div>
