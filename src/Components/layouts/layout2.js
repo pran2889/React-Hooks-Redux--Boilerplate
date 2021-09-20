@@ -3,8 +3,17 @@ import { StoreContext } from "../../context/store/storeContext";
 import useGetData from "../../hooks/getHook";
 import usePostData from "../../hooks/postHook";
 
+import i18nFile from '../../i18next';
+import { useTranslation } from 'react-i18next';
+import GlobalLoader from '../shared/GlobalLoader'
+
+
+
 const Layout2 = (props) => {
     const { state } = useContext(StoreContext);
+    const {t} = useTranslation("layout2");
+    const [loading,setLoading]=useState(false)
+
     const [body, setBody] = useState([]);
     const { postData, refreshPostData } = usePostData({
         response: [],
@@ -29,9 +38,25 @@ const Layout2 = (props) => {
         refreshGetData(`/todos/1`);
     }, [refreshGetData]);
 
+    useEffect(() => {
+        setLoading(true)
+        const timeout = setTimeout(() => {
+            setLoading(false)
+          }, 3000);
+          return () => {
+            clearTimeout(timeout);
+          };
+    }, []);
+    
+
+     //two methods to access translations
+    //console.log(t("layout2Lbl"))
+    //console.log("hiiii",i18nFile.t("layout2:layout2Lbl"))
+
     return (
         <div className="mainContent">
-            <h1>Layout2</h1>
+            {loading? <GlobalLoader open={loading}/>:"" }
+            <h1>{t("layout2Lbl")}</h1>
             <button onClick={InvokeAPI}>Invoke API</button>
             <h1> {JSON.stringify(state.generalStates.data)}</h1>
 

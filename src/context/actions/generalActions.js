@@ -6,6 +6,9 @@ export const generalActions = (props) => {
         },
         getBirthdays: (data) => {
             props.dispatch({ type: Actions.GET_BIRTHDAYS, data });
+        },
+        storeTheme:(data) =>{
+            props.dispatch({type:Actions.STORE_THEME,data})
         }
     }
 }

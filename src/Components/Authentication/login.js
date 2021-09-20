@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import auth from "./auth";
 
+import GlobalLoader from "../shared/GlobalLoader";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -44,19 +45,28 @@ const Login = (props) => {
         password: '',
     }
     const [loginData, setLoginData] = useState(initialState);
+    const [loading,setLoading]=useState(false)
 
     const handleFormChange = e => setLoginData({ ...loginData, [e.target.name]: e.target.value });
 
     const handleSubmit = e => {
         e.preventDefault();
+        setLoading(true)
         auth.login(loginData, () => {
            props.history.push("/dashboard");          
         });
     };
-       
+
+    useEffect(()=>{ 
+      return ()=>{
+        setLoading(false)
+      }
+    } ,[])
+  
   return (
     <Container component="main" maxWidth="xs">
         <CssBaseline />
+            {loading? <GlobalLoader open={loading}/>:"" }
             <div className={classes.paper}>
             <Avatar className={classes.avatar}>
                  <LockOutlinedIcon />

@@ -1,7 +1,10 @@
 import * as Actions from "../constants";
+
+
 export const generalStates = {
     data: [],
-    birthdays: null
+    birthdays: null,
+    theme:window.localStorage.getItem('PersistedTheme') || "light"
 }
 
 export const generalReducer = (state, action) => {
@@ -16,6 +19,11 @@ export const generalReducer = (state, action) => {
                 ...state,
                 data: action.birthdays
             };
+        case Actions.STORE_THEME:
+            return {
+                ...state,
+                theme:action.data
+            }
         default:
             throw new Error("Unexpected action");
     }
