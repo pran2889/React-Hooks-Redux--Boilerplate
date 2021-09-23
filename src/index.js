@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { StoreProvider } from './context/store/storeContext';
+import React from "react";
+
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { StoreProvider } from "./context/store/storeContext";
+import "./i18next";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <StoreProvider>
+  //dont put strictmode here It will generate error for theme switcher as Material ui dont support it till now.
+  <StoreProvider>
       <App />
-    </StoreProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </StoreProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

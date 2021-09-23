@@ -16,6 +16,9 @@ import IconExpandLess from '@material-ui/icons/ExpandLess'
 import IconExpandMore from '@material-ui/icons/ExpandMore'   
 import Tooltip from '@material-ui/core/Tooltip';
 
+import { useTranslation } from 'react-i18next';
+import i18nFile from '../../i18next';
+
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -33,57 +36,53 @@ const useStyles = makeStyles(theme => ({
 const AppMenu = () => {
     const classes = useStyles();
     const [openModules, setOpenModules] = React.useState(false)
-    
+    const {t } = useTranslation("menulist");
 
-    // function handleClick() {
-    //     setOpen(!open)    
-    // }
-    
     function handleClickModules() {
         setOpenModules(!openModules)
     }
     return (
         <Fragment>        
-            <NavLink style={{ color: "#000000", textDecoration: "none" }}  to="/dashboard" >             
-                <Tooltip title="Dashboard">
-                    <ListItem button >
+            <NavLink style={{ color: "inherit", textDecoration: "none" }}  to="/dashboard" >             
+                <Tooltip title="Dashboard" >
+                    <ListItem button  >
                         <ListItemIcon>
                             <DashboardIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
+                        <ListItemText primary={t("dashboard-link-text")} />
                     </ListItem>
                 </Tooltip>
             </NavLink>
 
-            <NavLink style={{ color: "#000000", textDecoration: "none" }} to="/layout">             
+            <NavLink style={{ color: "inherit", textDecoration: "none" }} to="/layout">             
                 <Tooltip title="Layout">
                     <ListItem button>
                         <ListItemIcon>
                             <ShoppingCartIcon    />
                         </ListItemIcon>
-                        <ListItemText primary="Layout" />
+                        <ListItemText primary={t("layout-link-text")} />
                     </ListItem>
                 </Tooltip>
             </NavLink>
 
-            <NavLink style={{ color: "#000000", textDecoration: "none" }} to="/layout2">             
+            <NavLink style={{ color: "inherit", textDecoration: "none" }} to="/layout2">             
                 <Tooltip title="Layout2">
                     <ListItem button >
                         <ListItemIcon>
                             <PeopleIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Layout2" />
+                        <ListItemText primary={t("layout2-link-text")} />
                     </ListItem>
                 </Tooltip>
             </NavLink>
 
-            <NavLink style={{ color: "#000000", textDecoration: "none" }} to="/layout3">                   
+            <NavLink style={{ color: "inherit", textDecoration: "none" }} to="/layout3">                   
                 <Tooltip title="Layout3">
                     <ListItem button>
                         <ListItemIcon>
                             <BarChartIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Layout3" />
+                        <ListItemText primary={t("layout3-link-text")} />
                     </ListItem>
                 </Tooltip>
             </NavLink>
@@ -93,29 +92,29 @@ const AppMenu = () => {
                     <ListItemIcon >
                         <DehazeIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Modules" />
+                    <ListItemText primary={t("modules-link-text")} />
                     {openModules ? <IconExpandLess /> : <IconExpandMore />}
                 </ListItem>
             </Tooltip>
             <Collapse in={openModules} timeout="auto" unmountOnExit>                
                 <List component="div" disablePadding>
-                    <NavLink style={{ color: "#000000", textDecoration: "none" }} to="/menu1" >
+                    <NavLink style={{ color: "inherit", textDecoration: "none" }} to="/menu1" >
                         <Tooltip title="Menu1">
                         <ListItem button className={classes.nested} >
                             <ListItemIcon>
                                 <LayersIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Menu 1" />
+                            <ListItemText primary={t("menu1-link-text")} />
                         </ListItem>
                         </Tooltip>
                     </NavLink>
-                    <NavLink style={{ color: "#000000", textDecoration: "none" }} to="/menu2" >
+                    <NavLink style={{ color: "inherit", textDecoration: "none" }} to="/menu2" >
                         <Tooltip title="Menu2">
                         <ListItem button className={classes.nested} >
                             <ListItemIcon>
                                 <LayersIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Menu 2" />
+                            <ListItemText primary={t("menu2-link-text")} />
                         </ListItem>
                         </Tooltip>
                     </NavLink>
